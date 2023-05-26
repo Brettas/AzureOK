@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model MVC.Models.Countries.CountryDto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CountryDto</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="@Model.PhotoId" alt="@Model.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Name</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        @Html.HiddenFor(m => m.Id)
+    </form>
+    @Html.ActionLink("Back to List", "Index", "Countries", null, new { @class="btn btn-primary"})
+</div>

@@ -1,0 +1,12 @@
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\bin\Debug\net6.0\AzureBlobs.deps.json
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\bin\Debug\net6.0\AzureBlobs.dll
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\bin\Debug\net6.0\AzureBlobs.pdb
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\AzureBlobs.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\AzureBlobs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\AzureBlobs.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\AzureBlobs.AssemblyInfo.cs
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\AzureBlobs.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\AzureBlobs.dll
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\refint\AzureBlobs.dll
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\AzureBlobs.pdb
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AzureBlobs\obj\Debug\net6.0\ref\AzureBlobs.dll

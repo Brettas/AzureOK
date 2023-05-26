@@ -1,0 +1,140 @@
+﻿@model MVC.Models.Friends.CreateFriendDto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FriendDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FormFile" class="control-label"></label>
+                <input asp-for="FormFile" class="form-control" type="file"/>
+                <span asp-validation-for="FormFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CellPhone" class="control-label"></label>
+                <input asp-for="CellPhone" class="form-control" />
+                <span asp-validation-for="CellPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateId" class="control-label">Country & State</label>
+                <select id="StateAndCountry" name="StateAndCountry" class="form-select">
+                    @{
+                        if (ViewBag?.States != null)
+                        {
+                            foreach (var state in ViewBag.States)
+                            {
+                                <option value="@state.Id-@state.CountryId">@state.CountryName - @state.Name</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+            @Html.HiddenFor(m => m.Id)
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<h4>Friends</h4>
+<hr />
+@{
+    var numberOfColsNeeded = 4;
+    var totalCounter = ViewBag?.NumberOfFriends;
+    var itemCounter = 1;
+}
+
+@foreach (var friend in ViewBag?.MyFriends)
+{
+    if (itemCounter % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+
+        <div class="col-sm-3">
+            <div class="card">
+                <img class="card-img-top" src="@friend.PhotoId" alt="@friend.FirstName">
+                <div class="card-body">
+                    <h5 class="card-title">@friend.FirstName @friend.LastName</h5>
+                    <p>@friend.BirthDate</p>
+                    <p>@friend.CellPhone</p>
+                    <p>@friend.Email</p>
+                @Html.ActionLink("Remove", "RemoveFromFriends", new { friendId=Model.Id, oldFriendId = friend.Id }, new { @class="btn btn-danger"})
+                </div>
+            </div>
+        </div>
+    if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+    {
+        @:</div>
+    }
+    itemCounter++;
+}
+
+<hr />
+
+@{
+    var totalCounter2 = ViewBag?.TotalNumberOfFriends;
+    var itemCounter2 = 1;
+}
+
+@foreach (var friend in ViewBag?.Friends)
+{
+    if (itemCounter2 % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+
+    <div class="col-sm-3">
+        <div class="card">
+            <img class="card-img-top" src="@friend.PhotoId" alt="@friend.FirstName">
+            <div class="card-body">
+                <h5 class="card-title">@friend.FirstName @friend.LastName</h5>
+                <p>@friend.BirthDate</p>
+                <p>@friend.CellPhone</p>
+                <p>@friend.Email</p>
+                @Html.ActionLink("Add To Friends", "AddToFriends", new { friendId=Model.Id, newFriendId = friend.Id }, new { @class="btn btn-success"})
+            </div>
+        </div>
+    </div>
+    if ((itemCounter2 % numberOfColsNeeded == 0) || ((itemCounter2) == totalCounter2))
+    {
+        @:</div>
+    }
+    itemCounter2++;
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,12 @@
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\bin\Debug\net6.0\AT.Domain.deps.json
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\bin\Debug\net6.0\AT.Domain.dll
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\bin\Debug\net6.0\AT.Domain.pdb
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\AT.Domain.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\AT.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\AT.Domain.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\AT.Domain.AssemblyInfo.cs
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\AT.Domain.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\AT.Domain.dll
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\refint\AT.Domain.dll
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\AT.Domain.pdb
+C:\Users\user\Downloads\infnet-csharp-azure-AT-master\AT.Domain\obj\Debug\net6.0\ref\AT.Domain.dll

@@ -1,0 +1,86 @@
+﻿@model MVC.Models.Friends.CreateFriendDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Friend</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="@Model.PhotoId" alt="@Model.FirstName">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.FirstName @Model.LastName</h5>
+                    <p><b>Birth Date</b>: @Model.BirthDate</p>
+                    <p><b>Cellphone</b>: @Model.CellPhone</p>
+                    <p><b>Email</b>: @Model.Email</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Country</h4>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <img class="card-img-top" src="@ViewBag?.Country?.PhotoId" alt="@ViewBag?.Country?.Name">
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag?.Country?.Name</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>State</h4>
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <img class="card-img-top" src="@ViewBag?.State?.PhotoId" alt="@ViewBag?.State?.Name">
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag?.State?.Name</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Friends</h4>
+@{
+    var numberOfColsNeeded = 4;
+    var totalCounter = ViewBag?.NumberOfFriends;
+    var itemCounter = 1;
+}
+
+@foreach (var friend in ViewBag?.MyFriends)
+{
+    if (itemCounter % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+
+    <div class="col-sm-3">
+        <div class="card">
+            <img class="card-img-top" src="@friend.PhotoId" alt="@friend.FirstName">
+            <div class="card-body">
+                <h5 class="card-title">@friend.FirstName @friend.LastName</h5>
+                <p>@friend.BirthDate</p>
+                <p>@friend.CellPhone</p>
+                <p>@friend.Email</p>
+            </div>
+        </div>
+    </div>
+    if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+    {
+        @:</div>
+    }
+    itemCounter++;
+}
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }, new { @class="btn btn-light"})
+    @Html.ActionLink("Back to Friends", "Index", new { id = Model.Id  }, new { @class="btn btn-light"})
+</div>

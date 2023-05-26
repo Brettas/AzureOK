@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVC.Models.Friends.FriendDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Friends", null, new { @class="btn btn-success"})
+</p>
+
+@{
+    var numberOfColsNeeded = 4;
+    var totalCounter = Model.Count();
+    var itemCounter = 1;
+}
+
+@foreach (var friend in Model)
+{
+    if (itemCounter % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+
+        <div class="col-sm-3">
+            <div class="card">
+                <img class="card-img-top" src="@friend.PhotoId" alt="@friend.FirstName">
+                <div class="card-body">
+                    <h5 class="card-title">@friend.FirstName @friend.LastName</h5>
+                    <p>@friend.BirthDate</p>
+                    <p>@friend.CellPhone</p>
+                    <p>@friend.Email</p>
+                @Html.ActionLink("Edit", "Edit", new { id=friend.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Details", "Details", new { id=friend.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Delete", "Delete", new { id=friend.Id }, new { @class="btn btn-danger"})
+                </div>
+            </div>
+        </div>
+    if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+    {
+        @:</div>
+    }
+    itemCounter++;
+}
